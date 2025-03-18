@@ -4,11 +4,11 @@ let nomesJaSorteados = []
 
 function adicionarAmigo() {
     let nome = document.querySelector('input').value;
-    if (nome != '') {
-        amigos.push(nome);
-    } else {
-        alert("Por favor, insira um nome.");
-    }
+        if (nome != '') {
+            amigos.push(nome);
+        } else {
+            alert("Por favor, insira um nome.");
+        }
     console.log(nome);
     console.log(amigos);
     limparCampo(); //Chama a função para limpar o campo após adicionar o nome
@@ -37,21 +37,24 @@ function sortearAmigo(){
         let resultado = document.getElementById('resultado');
         let indice = gerarIndice()
         console.log(resultado)
+
+        while (nomesJaSorteados.includes(indice)){
+            indice = gerarIndice();
+        }
+
         let nomeSorteado = amigos[indice]
-        
-        nomesJaSorteados.push(nomeSorteado)
+        nomesJaSorteados.push(indice)
         resultado.innerHTML = `O amigo secreto sorteado é: ${nomeSorteado}`;
-        if (nomesJaSorteados.includes(nomeSorteado)){
+      
+        if (nomesJaSorteados.length === amigos.length){
+            alert("Todos os amigos secretos foram sorteados!")
+            console.log(nomesJaSorteados)
             return sortearAmigo
         }else{
             return nomeSorteado
         }
-
-    }else{
-        alert("Por favor, insira mais nomes")
-    } 
-}
-
+   }
+}   
 
 
 function gerarIndice(){
