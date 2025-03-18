@@ -3,7 +3,7 @@
 <h2>Objetivo</h2>
 Este projeto tem como objetivo oferecer uma ferramenta simples e interativa para realizar o sorteio de "Amigo Secreto" de maneira digital. Perimitindo o usuário realizar o sorteio em questão de segundos.
 <br/>
-Projeto realizado através do curso: <Strong> One Orecle Next Stage </Strong>
+Projeto realizado através do curso: <Strong> One - Orecle Next Education </Strong>
 
 <h1>Linguagens Utilizadas</h1>
 <ul>
