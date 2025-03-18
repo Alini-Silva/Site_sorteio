@@ -1,6 +1,6 @@
 //O principal objetivo deste desafio é fortalecer suas habilidades em lógica de programação. Aqui você deverá desenvolver a lógica para resolver o problema.
 let amigos = [];
-
+let nomesJaSorteados = []
 
 function adicionarAmigo() {
     let nome = document.querySelector('input').value;
@@ -38,7 +38,15 @@ function sortearAmigo(){
         let indice = gerarIndice()
         console.log(resultado)
         let nomeSorteado = amigos[indice]
+        
+        nomesJaSorteados.push(nomeSorteado)
         resultado.innerHTML = `O amigo secreto sorteado é: ${nomeSorteado}`;
+        if (nomesJaSorteados.includes(nomeSorteado)){
+            return sortearAmigo
+        }else{
+            return nomeSorteado
+        }
+
     }else{
         alert("Por favor, insira mais nomes")
     } 
@@ -51,6 +59,9 @@ function gerarIndice(){
     console.log(indice)
     return indice
 }
+
+
+//Não ter repetição de nomes na lista
 
 // criar uma lista, em seguida criar uma função em que ao usuario apertar em adicionar o nome é inserido na lista. 
 // Em seguida ao clicar em sortear amigo os nomes vao ser retirado da lista sem repetição
